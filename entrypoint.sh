@@ -16,13 +16,14 @@ kubectl config current-context
 kubectl get nodes
 ls -la
 
-Dns=$(find . -name "coredns*")
-Namespace=$(find . -name "namespace*")
-Configmap=$(find . -name "configmap*")
-Secret=$(find . -name secret.yaml)
-Deployment=$(find . -name deployment.yaml)
-Service=$(find . -name service.yaml)
-RBAC=$(find . -name rbac.yaml)
+Dns=$(find . -type f -name "coredns*")
+Namespace=$(find . -type f -name "namespace*")
+Configmap=$(find . -type f -name "configmap*")
+Secret=$(find . -type f -name "secret.y*")
+Deployment=$(find . -type f -name "deployment.y*")
+Service=$(find . -type f -name "service.y*")
+Ingress=$(find . -type f -name "ingress.y*")
+RBAC=$(find . -type f -name "rbac.y*")
 
 for dns in $Dns
 do
@@ -52,6 +53,11 @@ done
 for service in $Service
 do
     kubectl apply -f $service
+done
+
+for ingress in $Ingress
+do
+    kubectl apply -f $ingress
 done
 
 for rbac in $RBAC
