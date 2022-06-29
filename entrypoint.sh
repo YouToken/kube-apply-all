@@ -16,6 +16,8 @@ kubectl config current-context
 kubectl get nodes
 ls -la
 
+# kubectl apply -f services --recursive
+
 Dns=$(find . -type f -name "coredns*")
 Namespace=$(find . -type f -name "namespace*")
 Configmap=$(find . -type f -name "configmap*")
