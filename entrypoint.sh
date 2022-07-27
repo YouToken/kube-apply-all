@@ -26,6 +26,8 @@ Deployment=$(find . -type f -name "deployment.y*")
 Service=$(find . -type f -name "service.y*")
 Ingress=$(find . -type f -name "ingress.y*")
 RBAC=$(find . -type f -name "rbac.y*")
+PODMONITOR=$(find . -type f -name "podmonitor.y*")
+SERVICEMONITOR=$(find . -type f -name "servicemonitor.y*")
 
 for dns in $Dns
 do
@@ -65,6 +67,16 @@ done
 for rbac in $RBAC
 do
     kubectl apply -f $rbac
+done
+
+for podmonitor in $PODMONITOR
+do
+    kubectl apply -f $podmonitor
+done
+
+for servicemonitor in $SERVICEMONITOR
+do
+    kubectl apply -f $servicemonitor
 done
 
 rm /tmp/config
