@@ -22,12 +22,12 @@ Dns=$(find . -type f -name "coredns*")
 Namespace=$(find . -type f -name "namespace*")
 Configmap=$(find . -type f -name "configmap*")
 Secret=$(find . -type f -name "secret.y*")
-Deployment=$(find . -type f -name "deployment.y*")
-Service=$(find . -type f -name "service.y*")
-Ingress=$(find . -type f -name "ingress.y*")
-RBAC=$(find . -type f -name "rbac.y*")
-PODMONITOR=$(find . -type f -name "podmonitor.y*")
-SERVICEMONITOR=$(find . -type f -name "servicemonitor.y*")
+Deployment=$(find . -type f -name "deployment.y*ml")
+Service=$(find . -type f -name "service.y*ml")
+Ingress=$(find . -type f -name "ingress.y*ml")
+RBAC=$(find . -type f -name "rbac.y*ml")
+PODMONITOR=$(find . -type f -name "podmonitor.y*ml")
+SERVICEMONITOR=$(find . -type f -name "servicemonitor.y*ml")
 
 for dns in $Dns
 do
