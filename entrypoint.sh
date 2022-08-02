@@ -19,16 +19,16 @@ ls -la
 
 # kubectl apply -f services --recursive
 
-Dns=$(find . -type f -name "coredns*")
-Namespace=$(find . -type f -name "namespace*")
-Configmap=$(find . -type f -name "configmap*")
-Secret=$(find . -type f -name "secret.y*")
-Deployment=$(find . -type f -name "deployment.y*ml")
-Service=$(find . -type f -name "service.y*ml")
-Ingress=$(find . -type f -name "ingress.y*ml")
-RBAC=$(find . -type f -name "rbac.y*ml")
-PODMONITOR=$(find . -type f -name "podmonitor.y*ml")
-SERVICEMONITOR=$(find . -type f -name "servicemonitor.y*ml")
+Dns=$(find ./$SERVICE/ -type f -name "coredns*")
+Namespace=$(find ./$SERVICE/ -type f -name "namespace*")
+Configmap=$(find ./$SERVICE/ -type f -name "configmap*")
+Secret=$(find ./$SERVICE/ -type f -name "secret.y*")
+Deployment=$(find ./$SERVICE/ -type f -name "deployment.y*ml")
+Service=$(find ./$SERVICE/ -type f -name "service.y*ml")
+Ingress=$(find ./$SERVICE/ -type f -name "ingress.y*ml")
+RBAC=$(find ./$SERVICE/ -type f -name "rbac.y*ml")
+PODMONITOR=$(find ./$SERVICE/ -type f -name "podmonitor.y*ml")
+SERVICEMONITOR=$(find ./$SERVICE/ -type f -name "servicemonitor.y*ml")
 
 for dns in $Dns
 do
