@@ -9,6 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 
 # Extract the base64 encoded config data and write this to the KUBECONFIG
+echo $SERVICE
 echo "$KUBE_CONFIG_DATA" | base64 --decode > /tmp/config
 export KUBECONFIG=/tmp/config
 
