@@ -10,7 +10,11 @@ trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 
 # Extract the base64 encoded config data and write this to the KUBECONFIG
 
-export SERVICE=$(git log -1 -p |grep +++|cut -d/ -f2)
+git status
+git log -1
+git log -1 -p |grep +++|cut -d/ -f2
+
+export SERVICE="$(git log -1 -p |grep +++|cut -d/ -f2)"
 echo "$KUBE_CONFIG_DATA" | base64 --decode > /tmp/config
 export KUBECONFIG=/tmp/config
 
