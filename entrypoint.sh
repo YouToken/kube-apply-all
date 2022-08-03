@@ -10,6 +10,7 @@ trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 
 # Extract the base64 encoded config data and write this to the KUBECONFIG
 
+whoami
 git log -1
 git log -1 -p |grep +++|cut -d/ -f2
 
