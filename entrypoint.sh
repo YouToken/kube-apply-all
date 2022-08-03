@@ -16,9 +16,9 @@ chown -R $(whoami):$(whoami) /github/workspace
 # git log -1
 # git log -1 -p |grep +++|cut -d/ -f2
 FILES=$(git show HEAD|grep +++|cut -d/ -f2-)
-echo $FILES
+echo "Files: $FILES"
 
-export SERVICE="$(git log -1 -p |grep +++|cut -d/ -f2)"
+# export SERVICE="$(git log -1 -p |grep +++|cut -d/ -f2)"
 echo "$KUBE_CONFIG_DATA" | base64 --decode > /tmp/config
 export KUBECONFIG=/tmp/config
 
