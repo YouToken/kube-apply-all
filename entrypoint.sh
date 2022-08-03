@@ -13,7 +13,7 @@ trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 whoami
 pwd
 chown -R $(whoami):$(whoami) /github/workspace
-# git log -1
+git log -1
 # git log -1 -p |grep +++|cut -d/ -f2
 FILES=$(git show HEAD|grep +++|cut -d/ -f2-)
 echo "Files: $FILES"
